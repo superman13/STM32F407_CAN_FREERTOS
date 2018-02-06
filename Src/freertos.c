@@ -138,10 +138,14 @@ void StartMain(void const * argument)
   MX_USB_HOST_Init();
 
   /* USER CODE BEGIN StartMain */
+	HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+	HAL_GPIO_TogglePin(LD4_GPIO_Port, LD4_Pin);
+    osDelay(100);
+	HAL_GPIO_TogglePin(LD5_GPIO_Port, LD5_Pin);
+	osDelay(100);
   }
   /* USER CODE END StartMain */
 }
